@@ -1695,3 +1695,218 @@ Rapprochement:
 *Document créé le: 03/01/2026*
 *Version: 1.0*
 *Auteur: Consultant Odoo*
+
+
+
+
+
+
+# FICHE DE COLLECTE DES DONNÉES CLIENT
+
+## Projet: Déploiement Odoo 18 Enterprise
+**Client:** _____________________________  
+**Date:** _____________________________  
+**Responsable collecte:** _____________________________
+
+---
+
+## 1. INFORMATIONS GÉNÉRALES
+
+### Questions préliminaires
+
+| Question | Réponse |
+|----------|---------|
+| Système actuel utilisé ? | ☐ Excel ☐ Autre ERP ☐ Logiciel caisse ☐ Aucun |
+| Nombre de produits actifs ? | __________ |
+| Nombre de clients actifs ? | __________ |
+| Nombre de fournisseurs ? | __________ |
+| Date de bascule souhaitée ? | ___/___/______ |
+| Créances clients en cours ? | ☐ Oui (_____ FCFA) ☐ Non |
+| Dettes fournisseurs en cours ? | ☐ Oui (_____ FCFA) ☐ Non |
+| Commandes en attente ? | ☐ Oui ☐ Non |
+
+---
+
+## 2. DONNÉES PRODUITS (OBLIGATOIRE)
+
+### Format requis: Excel (.xlsx) ou CSV (UTF-8)
+
+| Colonne | Description | Obligatoire | Exemple |
+|---------|-------------|-------------|---------|
+| `reference` | Code produit interne | ✅ Oui | PEIN-SAT-BLC-20L |
+| `nom` | Nom complet du produit | ✅ Oui | Peinture Satinée Blanche 20L |
+| `categorie` | Catégorie/Famille | ✅ Oui | Peintures |
+| `prix_vente` | Prix de vente HT (FCFA) | ✅ Oui | 25000 |
+| `cout` | Prix d'achat/Coût (FCFA) | ✅ Oui | 18000 |
+| `unite_mesure` | Unité de vente | ✅ Oui | Seau 20L |
+| `code_barre` | Code-barres EAN | ☐ Optionnel | 6171234567890 |
+| `stock_actuel` | Quantité en stock | ✅ Oui | 45 |
+| `variante` | Attributs (taille, couleur) | ☐ Si applicable | Couleur: Blanc |
+
+### Checklist produits
+- [ ] Fichier Excel fourni
+- [ ] Toutes les colonnes obligatoires remplies
+- [ ] Prix en FCFA (sans espaces ni symboles)
+- [ ] Catégories cohérentes
+- [ ] Pas de doublons de référence
+
+---
+
+## 3. DONNÉES CLIENTS (OBLIGATOIRE)
+
+### Format requis: Excel (.xlsx) ou CSV (UTF-8)
+
+| Colonne | Description | Obligatoire | Exemple |
+|---------|-------------|-------------|---------|
+| `nom` | Nom ou Raison sociale | ✅ Oui | Quincaillerie ABC |
+| `type` | Type de client | ✅ Oui | Quincaillerie / Particulier / Entreprise |
+| `adresse` | Adresse complète | ✅ Oui | BP 1234, Yaoundé |
+| `ville` | Ville | ✅ Oui | Yaoundé |
+| `region` | Région/Zone | ☐ Optionnel | Centre |
+| `telephone` | Téléphone principal | ✅ Oui | 699123456 |
+| `telephone2` | Téléphone secondaire | ☐ Optionnel | 677654321 |
+| `email` | Adresse email | ☐ Optionnel | contact@abc.cm |
+| `niu` | Numéro Identifiant Unique | ☐ Si entreprise | M012345678901A |
+| `rccm` | Registre de commerce | ☐ Si entreprise | RC/YAO/2020/B/1234 |
+| `limite_credit` | Plafond crédit (FCFA) | ✅ Oui | 500000 |
+| `solde_actuel` | Créance actuelle (FCFA) | ✅ Oui | 150000 |
+| `commercial` | Commercial attitré | ☐ Optionnel | Jean Dupont |
+
+### Checklist clients
+- [ ] Fichier Excel fourni
+- [ ] Noms complets (pas d'abréviations ambiguës)
+- [ ] Téléphones au format local (6XXXXXXXX)
+- [ ] Soldes vérifiés et à jour
+- [ ] Types clients cohérents
+
+---
+
+## 4. DONNÉES FOURNISSEURS
+
+### Format requis: Excel (.xlsx) ou CSV (UTF-8)
+
+| Colonne | Description | Obligatoire | Exemple |
+|---------|-------------|-------------|---------|
+| `nom` | Raison sociale | ✅ Oui | Peintures Cameroun SA |
+| `pays` | Pays | ✅ Oui | Cameroun |
+| `adresse` | Adresse | ✅ Oui | Zone Industrielle Douala |
+| `telephone` | Téléphone | ✅ Oui | 233445566 |
+| `email` | Email contact | ☐ Optionnel | commandes@peintures.cm |
+| `niu` | NIU fiscal | ☐ Si local | M098765432101B |
+| `devise` | Devise transactions | ✅ Oui | XAF / EUR / USD |
+| `delai_paiement` | Conditions paiement | ✅ Oui | 30 jours |
+| `produits` | Produits fournis | ☐ Optionnel | Peintures, Vernis |
+
+### Checklist fournisseurs
+- [ ] Fichier Excel fourni
+- [ ] Devises correctement indiquées
+- [ ] Fournisseurs actifs uniquement
+
+---
+
+## 5. INVENTAIRE / STOCK INITIAL
+
+### Format requis: Excel (.xlsx) ou CSV (UTF-8)
+
+| Colonne | Description | Obligatoire | Exemple |
+|---------|-------------|-------------|---------|
+| `reference` | Code produit | ✅ Oui | PEIN-SAT-BLC-20L |
+| `emplacement` | Entrepôt/Zone | ✅ Oui | Entrepôt Principal |
+| `quantite` | Quantité comptée | ✅ Oui | 45 |
+| `cout_moyen` | Coût moyen actuel | ✅ Oui | 18500 |
+| `date_inventaire` | Date du comptage | ✅ Oui | 15/01/2026 |
+| `lot` | Numéro de lot | ☐ Si applicable | LOT2025-001 |
+
+### Checklist inventaire
+- [ ] Inventaire physique réalisé
+- [ ] Date de l'inventaire notée
+- [ ] Coûts moyens calculés
+- [ ] Écarts identifiés et justifiés
+
+---
+
+## 6. SOLDES COMPTABLES D'OUVERTURE
+
+### Pour la bascule comptable (si applicable)
+
+| Compte | Description | Solde Débiteur | Solde Créditeur |
+|--------|-------------|----------------|-----------------|
+| 311 | Marchandises | ______________ | |
+| 411 | Clients | ______________ | |
+| 401 | Fournisseurs | | ______________ |
+| 521 | Banque | ______________ | |
+| 571 | Caisse | ______________ | |
+| 531 | Mobile Money | ______________ | |
+
+### Documents requis
+- [ ] Balance générale au jour J-1 de bascule
+- [ ] Détail des créances clients (par facture)
+- [ ] Détail des dettes fournisseurs (par facture)
+- [ ] Relevés bancaires récents
+- [ ] État de caisse
+
+---
+
+## 7. HISTORIQUE (OPTIONNEL)
+
+### Pour analyse et reporting
+
+| Document | Période | Format | Fourni |
+|----------|---------|--------|--------|
+| Factures de vente | 12 derniers mois | Excel/PDF | ☐ |
+| Commandes en cours | À ce jour | Excel | ☐ |
+| Avoirs en attente | À ce jour | Excel | ☐ |
+| Statistiques ventes | 12 derniers mois | Excel | ☐ |
+
+---
+
+## 8. RÉCAPITULATIF FICHIERS À FOURNIR
+
+| # | Fichier | Format | Statut |
+|---|---------|--------|--------|
+| 1 | Liste des produits | Excel (.xlsx) | ☐ Reçu |
+| 2 | Liste des clients | Excel (.xlsx) | ☐ Reçu |
+| 3 | Liste des fournisseurs | Excel (.xlsx) | ☐ Reçu |
+| 4 | Inventaire physique | Excel (.xlsx) | ☐ Reçu |
+| 5 | Balance comptable | Excel/PDF | ☐ Reçu |
+| 6 | Détail créances | Excel (.xlsx) | ☐ Reçu |
+| 7 | Détail dettes | Excel (.xlsx) | ☐ Reçu |
+
+---
+
+## 9. NOTES ET OBSERVATIONS
+
+```
+_____________________________________________________________________________
+
+_____________________________________________________________________________
+
+_____________________________________________________________________________
+
+_____________________________________________________________________________
+
+_____________________________________________________________________________
+```
+
+---
+
+## 10. VALIDATION
+
+| Rôle | Nom | Signature | Date |
+|------|-----|-----------|------|
+| Client | | | |
+| Consultant | | | |
+
+---
+
+**IMPORTANT:** 
+- Tous les fichiers doivent être au format **Excel (.xlsx)** ou **CSV encodé UTF-8**
+- Les montants doivent être en **FCFA** sans espaces ni symboles monétaires
+- Les dates au format **JJ/MM/AAAA**
+- Éviter les cellules fusionnées dans Excel
+
+---
+
+*Document généré le: 08/01/2026*  
+*Version: 1.0*
+
